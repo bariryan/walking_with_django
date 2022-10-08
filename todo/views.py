@@ -23,6 +23,7 @@ def add_item(request):
     }
     return render(request, "todo/add_item.html", context)
 
+
 def edit_item(request, item_id):
     item = get_object_or_404(Item, id=item_id)
     if request.method == 'POST':
@@ -48,5 +49,4 @@ def delete_item(request, item_id):
     item = get_object_or_404(Item, id=item_id)
     item.delete()
     return redirect('get_todo_list')
-
 
